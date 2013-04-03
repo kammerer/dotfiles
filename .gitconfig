@@ -1,0 +1,33 @@
+[user]
+  name = Tomek Szymczyszyn
+  email = tomasz.szymczyszyn@adtaily.com
+
+[alias]
+  ci = commit
+  co = checkout
+  br = branch
+  st = status
+  di = diff
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+  editor = /usr/bin/vim
+[commit]
+  verbose = true
