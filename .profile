@@ -1,9 +1,16 @@
+
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH:$HOME/bin:$PATH
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+export GOPATH=$HOME/go
 
 source ~/.git-completion.bash
+source ~/.alias
+source ~/work/base/grid/extras/shell-completion/grid_completion.bash
 
 #colors definions
 txtblk='\e[0;30m' # Black - Regular
@@ -46,5 +53,22 @@ export CLICOLOR=1
 #def colors of director, executable file, etc
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+export EDITOR=vim
+
 #prompt customization
-PS1="[\[$txtylw\]\A \[$bldgrn\]\u\[$txtrst\] \[$txtpur\]\W\[$txtred\] \$(chruby-prompt)\$(__git_ps1 \" (%s)\")\[$txtrst\]]\$ "
+PS1="[\[$txtylw\]\A \[$bldgrn\]\u\[$txtrst\] \[$txtpur\]\W\[$txtred\] \$(__git_ps1 \"(%s)\")\[$txtrst\]]\$ "
+
+
+[[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ]] && source "$HOME/.tmuxinator/scripts/tmuxinator"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Ruby GC tweaks
+export RUBY_HEAP_MIN_SLOTS=2000000
+export RUBY_HEAP_FREE_MIN=20000
+export RUBY_GC_MALLOC_LIMIT=100000000
+
+export RUBY_GC_HEAP_INIT_SLOTS=2000000
+
+# Curl CA Bundle
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+

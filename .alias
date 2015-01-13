@@ -1,0 +1,12 @@
+alias g='git'
+alias v='vim'
+alias rb='rbenv'
+alias rtags='RBENV_VERSION=system ripper-tags -R . $(bundle list --paths)'
+
+alias tml="tmux list-sessions"
+alias tma="tmux -2 attach -t $1"
+alias tmk="tmux kill-session -t $1"
+
+# alias grid="RBENV_VERSION=system grid"
+alias dropship="RBENV_VERSION=system dropship"
+alias library="RBENV_VERSION=system dropship ssh library"
